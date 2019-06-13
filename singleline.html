@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>
+    </title>
+    <style>
+    body{
+      font-size:10;
+    }
+
+    </style>  </head>
+  <body>
+    <div id="root">
+  name  <input v-model="message" placeholder="enter name">
+    <p>  data is: {{ message }}</p>
+
+
+
+    <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+  <!-->  <script>
+    var app =  new Vue({
+        el:'#root',
+
+        data:{
+          message:'enter text'
+
+
+              }
+              });
+
+
+    </script><-->
+
+  </body>
+</html>
