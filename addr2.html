@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+</head>
+<body>
+<center><h2>Subject List</h2></center>
+<div id="app">
+
+
+
+      <button id="add" style="background-color:red; margin: 0;  padding-right: 30px; width: 150px ;
+      height: 35px; color:white; border-radius:8px; float:right;" type="button" @click='removeRow(row)'>Remove</button>
+
+
+  <button id="add" style="background-color:#8533ff; margin: 0;  padding-right: 30px; width: 150px ;
+  height: 35px; color:white; border-radius:8px; float:right;" type="button" @click='addTableRow()'>Add a Subject</button>
+
+	 <table>
+<!--<tr><th>Sample Table</th></tr>-->
+<tr v-for="(content, index) in tableRows">
+    <!--  <td>{{content}}</td>-->
+      <div id="table" class="table-editable">
+        <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
+              class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>
+        <table class="table table-bordered table-responsive-md table-striped text-center">
+          <thead>
+            <tr>
+              <th class="text-center">Subject ID</th>
+              <th class="text-center">Subject Name</th>
+              <th class="text-center">Class</th>
+              <th class="text-center">Board</th>
+              <th class="text-center">Actions</th>
+
+            </tr>
+
+            <tr>
+             <td class="pt-3-half" contenteditable="true">Maths106</td>
+             <td class="pt-3-half" contenteditable="true">Maths</td>
+               <td class="pt-3-half" contenteditable="true">10</td>
+                 <td class="pt-3-half" contenteditable="true">CBSE</td>
+                 <td>
+                 <span class="table-remove"><button type="button"
+                     class="btn btn-danger btn-rounded btn-sm my-0"  style="background-color:#8533ff;  border-radius: 8px; padding:6px 20px;">Edit</button></span>
+</td>
+
+           </tr>
+
+
+                                   <tr>
+                                     <td class="pt-3-half" contenteditable="true">Science1120</td>
+                                     <td class="pt-3-half" contenteditable="true">Science</td>
+                                       <td class="pt-3-half" contenteditable="true">11</td>
+                                         <td class="pt-3-half" contenteditable="true">CBSE</td>
+                                         <td>
+
+                                       <span class="table-remove"><button type="button"
+                                           class="btn btn-danger btn-rounded btn-sm my-0"  style="background-color:#8533ff;  border-radius: 8px; padding:6px 20px;">Edit</button></span>
+                                         </td>
+                                   </tr>
+
+
+
+
+          </thead>
+
+          <tbody>
+             <tr  v-for="(content, index) in tableRows">
+              <td class="pt-3-half" contenteditable="true">Maths106</td>
+              <td class="pt-3-half" contenteditable="true">Maths</td>
+                <td class="pt-3-half" contenteditable="true">10</td>
+                  <td class="pt-3-half" contenteditable="true">CBSE</td>
+                  <td>
+                  <span class="table-remove"><button type="button"
+                      class="btn btn-danger btn-rounded btn-sm my-0"  style="background-color:#8533ff;  border-radius: 8px; padding:6px 20px;">Edit</button></span>
+</td>
+
+            </tr>
+
+  </tbody>
+</table><br>
+
+</div>
+<script>
+ new Vue({
+  el: '#app',
+  data: {
+    tableRows:[ ],
+  counter:[]
+  },
+  methods:{
+    addTableRow: function () {
+      this.counter++;
+
+      this.tableRows.push(+this.counter);
+
+   }
+	},
+    deleteTableRow: function (row)
+     {
+      this.counter--;
+      this.tableRows.splice(row, 1);
+   }
+  });
+
+</script>
+</body>
+</html>
